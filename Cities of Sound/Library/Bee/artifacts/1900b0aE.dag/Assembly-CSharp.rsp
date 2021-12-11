@@ -321,6 +321,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
 "Assets/Scripts/callGrid.cs"
 "Assets/Scripts/gridCreate.cs"
+"Assets/Scripts/MapTexture.cs"
 -langversion:8.0
 
 /deterministic

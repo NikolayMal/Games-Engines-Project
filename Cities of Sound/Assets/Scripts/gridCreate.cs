@@ -10,6 +10,7 @@ public class gridCreate
     private int[,] gridArray;
 
     Material Building = Resources.Load("Building", typeof(Material)) as Material;
+    Material testimg = Resources.Load("testimg", typeof(Material)) as Material;
 
     // Colors
     Color matColor = new Color(139f / 255f, 69f / 255f, 19f / 255f, 1f);
@@ -103,8 +104,9 @@ public class gridCreate
                             // Roof of Building
                             var cubeN = GameObject.CreatePrimitive(PrimitiveType.Cube);
                             cubeN.name = "BuildingRoof " + (x + i) + " " + (y + i);
-                            cubeN.GetComponent<Renderer>().material.color = matColor3;
+                            cubeN.GetComponent<Renderer>().material = testimg;
                             cubeN.transform.position = new Vector3(x, 1.5f + i, y);
+                            cubeN.AddComponent<MapTexture>();
                         }
                         else
                         {
