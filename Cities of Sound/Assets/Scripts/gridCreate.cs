@@ -9,11 +9,14 @@ public class gridCreate
     private int height;
     private int[,] gridArray;
 
+    Material Building = Resources.Load("Building", typeof(Material)) as Material;
+
     // Colors
     Color matColor = new Color(139f / 255f, 69f / 255f, 19f / 255f, 1f);
     Color matColor2 = new Color(70 / 255f, 160f / 255f, 70f / 255f, 1f);
-
     Color matColor3 = new Color(0f / 255f, 0f / 255f, 0f / 255f, 1f);
+    Color matColor4 = new Color(180f / 255f, 240f / 255f, 0f / 200f, 1f);
+
 
     public gridCreate(int width, int height)
     {
@@ -73,33 +76,57 @@ public class gridCreate
             {
                 if (gridArray[x, y] == 1)
                 {
+                    // Determine Height of Building
                     int bHV = 0;
-
-                    var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    cube.name = "BuildingCube " + x + " " + y;
-                    cube.GetComponent<Renderer>().material.color = matColor;
-                    cube.transform.position = new Vector3(x, 1.5f, y);
-                    // calls function to determine height
                     bHV = buildingHeightValue(bHV);
+                    if (bHV == 1)
+                    {
+                        // If Building Height is 1
+                        var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                        cube.name = "Building1high " + x + " " + y;
+                        cube.GetComponent<Renderer>().material.color = matColor2;
+                        cube.transform.position = new Vector3(x, 1.5f, y);
+                    }
+                    else
+                    {
+                        // Bottom of building where building is not 1 high
+                        var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                        cube.name = "BuildingBottom " + x + " " + y;
+                        cube.GetComponent<Renderer>().material.color = matColor4;
+                        cube.transform.position = new Vector3(x, 1.5f, y);
+                    }
+                    // Otherwise do :
                     for (int i = 1; i < bHV; i++)
                     {
-                        var cubeN = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                        cubeN.name = "BuildingCubeHeight " + (x + i) + " " + (y + i);
-                        cubeN.GetComponent<Renderer>().material.color = matColor;
-                        cubeN.transform.position = new Vector3(x, 1.5f + i, y);
+                        if (i == (bHV) - 1)
+                        {
+                            // Roof of Building
+                            var cubeN = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                            cubeN.name = "BuildingRoof " + (x + i) + " " + (y + i);
+                            cubeN.GetComponent<Renderer>().material.color = matColor3;
+                            cubeN.transform.position = new Vector3(x, 1.5f + i, y);
+                        }
+                        else
+                        {
+                            // Middle Bulding
+                            var cubeN = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                            cubeN.name = "BuildingCubeInbetween " + (x + i) + " " + (y + i);
+                            cubeN.GetComponent<Renderer>().material = Building;
+                            cubeN.transform.position = new Vector3(x, 1.5f + i, y);
+                        }
                     }
                 }
                 if (gridArray[x, y] == 2)
                 {
                     var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    cube.name = "RoadCube " + x + " " + y;
+                    cube.name = "Road " + x + " " + y;
                     cube.GetComponent<Renderer>().material.color = matColor2;
                     cube.transform.position = new Vector3(x, 0.5f, y);
                 }
                 if (gridArray[x, y] == 3)
                 {
                     var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    cube.name = "CrossRoadCube " + x + " " + y;
+                    cube.name = "CrossRoad " + x + " " + y;
                     cube.GetComponent<Renderer>().material.color = matColor3;
                     cube.transform.position = new Vector3(x, 0.5f, y);
                 }
@@ -129,7 +156,7 @@ public class gridCreate
     private int buildingHeightValue(int bHV)
     {
         int temp = 0;
-        temp = Random.Range(1, 7);
+        temp = Random.Range(1, 4);
         bHV = temp;
 
         return bHV;
