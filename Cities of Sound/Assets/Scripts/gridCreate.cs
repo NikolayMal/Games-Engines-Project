@@ -21,8 +21,6 @@ public class gridCreate
         this.height = height;
         gridArray = new int[width, height];
 
-        Debug.Log(width + " " + height);
-
         /* Array Value meanings: 
             1 = Building
             2 = Road
@@ -67,17 +65,29 @@ public class gridCreate
             r2 = RoadIncrementValueW(r2);
             if (r2 >= height) break; // If exceeds grid height break;
         }
-
+        // x = x value
+        // y = z value  [in 3D world]
         for (int x = 0; x < gridArray.GetLength(0); x++)
         {
             for (int y = 0; y < gridArray.GetLength(1); y++)
             {
                 if (gridArray[x, y] == 1)
                 {
+                    int bHV = 0;
+
                     var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
                     cube.name = "BuildingCube " + x + " " + y;
                     cube.GetComponent<Renderer>().material.color = matColor;
                     cube.transform.position = new Vector3(x, 0.5f, y);
+                    // calls function to determine height
+                    bHV = buildingHeightValue(bHV);
+                    for (int i = 0; i < bHV; i++)
+                    {
+                        var cubeN = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                        cubeN.name = "BuildingCubeHeight " + (x + i) + " " + (y + i);
+                        cubeN.GetComponent<Renderer>().material.color = matColor;
+                        cubeN.transform.position = new Vector3(x, 0.5f + i, y);
+                    }
                 }
                 if (gridArray[x, y] == 2)
                 {
@@ -89,7 +99,7 @@ public class gridCreate
                 if (gridArray[x, y] == 3)
                 {
                     var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    cube.name = "RoadCube " + x + " " + y;
+                    cube.name = "CrossRoadCube " + x + " " + y;
                     cube.GetComponent<Renderer>().material.color = matColor3;
                     cube.transform.position = new Vector3(x, 0.5f, y);
                 }
@@ -98,14 +108,13 @@ public class gridCreate
 
 
     }
-
+    // Creating roads, leaving random amounts of buildings in between
     private int RoadIncrementValueH(int r)
     {
         int temp = 0;
         temp += Random.Range(2, 6); // Increment temp by random number between 2 and 6
         temp = temp + r;
         r = temp;
-        Debug.Log(r);
         return r;
     }
     private int RoadIncrementValueW(int r2)
@@ -114,7 +123,15 @@ public class gridCreate
         temp += Random.Range(2, 6); // Increment temp by random number between 2 and 6
         temp = temp + r2;
         r2 = temp;
-        Debug.Log(r2);
         return r2;
+    }
+
+    private int buildingHeightValue(int bHV)
+    {
+        int temp = 0;
+        temp = Random.Range(1, 7);
+        bHV = temp;
+
+        return bHV;
     }
 }
