@@ -36,7 +36,7 @@ public class gridCreate
         }
         // Create Roads by Height
         int r = 0;
-        for (int i = 0; i < 50; i++) // 50 is half of the 100 used to create grid
+        for (int i = 0; i < 20; i++) // 50 is half of the 100 used to create grid
         {
             for (int h = 0; h < gridArray.GetLength(0); h++)
             {
@@ -47,7 +47,7 @@ public class gridCreate
         }
         // Create Roads by Width
         int r2 = 0;
-        for (int j = 0; j < 50; j++) // 50 is half of the 100 used to create grid
+        for (int j = 0; j < 20; j++) // 50 is half of the 100 used to create grid
         {
             for (int w = 0; w < gridArray.GetLength(1); w++)
             {
@@ -78,15 +78,15 @@ public class gridCreate
                     var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
                     cube.name = "BuildingCube " + x + " " + y;
                     cube.GetComponent<Renderer>().material.color = matColor;
-                    cube.transform.position = new Vector3(x, 0.5f, y);
+                    cube.transform.position = new Vector3(x, 1.5f, y);
                     // calls function to determine height
                     bHV = buildingHeightValue(bHV);
-                    for (int i = 0; i < bHV; i++)
+                    for (int i = 1; i < bHV; i++)
                     {
                         var cubeN = GameObject.CreatePrimitive(PrimitiveType.Cube);
                         cubeN.name = "BuildingCubeHeight " + (x + i) + " " + (y + i);
                         cubeN.GetComponent<Renderer>().material.color = matColor;
-                        cubeN.transform.position = new Vector3(x, 0.5f + i, y);
+                        cubeN.transform.position = new Vector3(x, 1.5f + i, y);
                     }
                 }
                 if (gridArray[x, y] == 2)

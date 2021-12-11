@@ -7,6 +7,6 @@ public class callGrid : MonoBehaviour
     private void Start()
     {
         // Putting the Values to determine size of grid
-        gridCreate gridCreate = new gridCreate(100, 100);
+        gridCreate gridCreate = new gridCreate(40, 40);
     }
 }
