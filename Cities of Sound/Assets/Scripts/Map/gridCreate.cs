@@ -55,13 +55,17 @@ public class gridCreate
             {
                 break;
             }
+
+        }
+        for (int z = 0; z < SizeY; z++)
+        {
             // Set Values by Width
             for (int w = 0; w < gridArray.GetLength(1); w++)
             {
                 gridArray[w, randomW] = 2;
             }
             randomW = Increment_randomW(randomW);
-            if (randomH >= width)
+            if (randomW >= height)
             {
                 break;
             }
@@ -81,10 +85,10 @@ public class gridCreate
                 }
                 if (gridArray[x, y] == 2)
                 {
-                    var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    cube.name = "Road " + x + " " + y;
-                    cube.GetComponent<Renderer>().material.color = matColor3;
-                    cube.transform.position = new Vector3(x, 0.5f, y);
+                    var cubeN = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    cubeN.name = "Road " + x + " " + y;
+                    cubeN.GetComponent<Renderer>().material.color = matColor3;
+                    cubeN.transform.position = new Vector3(x, 0.5f, y);
                 }
             }
 
