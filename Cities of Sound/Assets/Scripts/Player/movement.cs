@@ -53,11 +53,13 @@ public class movement : MonoBehaviour
         {
             rb.velocity = transform.forward * 0;
         }
-        Debug.Log("death counter: " + deathCounterText);
-        Debug.Log(deathCounterText.GetType());
+
+        // Change counter text
         cubeDeathText.text = "Cubes Destroyed: " + deathCounterText.ToString();
     }
 
+
+    // Get Value of death counter from Projectile1 script
     public int dtcCounter(int dtc)
     {
         deathCounterText = dtc;
