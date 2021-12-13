@@ -87,6 +87,7 @@ public class gridCreate
                     cubeBottom.transform.position = new Vector3(x, 0.5f, y);
                     Rigidbody RigidBodycubeBottom = cubeBottom.AddComponent<Rigidbody>();
                     RigidBodycubeBottom.useGravity = false;
+                    cubeBottom.tag = "Cube";
 
 
                     rr = randomrandom(rr);
@@ -101,6 +102,7 @@ public class gridCreate
                             cube.GetComponent<Renderer>().material.color = Color.HSVToRGB(Random.Range(0.0f, 1.0f), 1, 1);
                             cube.transform.position = new Vector3(x, 0.5f + i, y);
                             Rigidbody RigidBodyCube = cube.AddComponent<Rigidbody>();
+                            cube.tag = "Cube";
                         }
                     }
                     else
@@ -113,6 +115,7 @@ public class gridCreate
                             cube.GetComponent<Renderer>().material.color = Color.HSVToRGB(Random.Range(0.0f, 1.0f), 1, 1);
                             cube.transform.position = new Vector3(x, 0.5f + i, y);
                             Rigidbody RigidBodyCube = cube.AddComponent<Rigidbody>();
+                            cube.tag = "Cube";
                         }
                     }
                 }
@@ -122,6 +125,7 @@ public class gridCreate
                     cubeN.name = "Path " + x + " " + y;
                     cubeN.GetComponent<Renderer>().material.color = black;
                     cubeN.transform.position = new Vector3(x, 0.5f, y);
+                    cubeN.tag = "Cube";
                 }
             }
 
