@@ -11,6 +11,5 @@ public class flipped : MonoBehaviour
         {
             transform.rotation = Quaternion.identity;
         }
-        Debug.Log(transform.rotation.x);
     }
 }

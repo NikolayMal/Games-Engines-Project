@@ -16,10 +16,8 @@ public class gridCreate
     Material testimg = Resources.Load("testimg", typeof(Material)) as Material;
 
     // Colors
-    Color matColor = new Color(139f / 255f, 69f / 255f, 19f / 255f, 1f);
-    Color matColor2 = new Color(70 / 255f, 160f / 255f, 70f / 255f, 1f);
-    Color matColor3 = new Color(0f / 255f, 0f / 255f, 0f / 255f, 1f);
-    Color matColor4 = new Color(180f / 255f, 240f / 255f, 0f / 200f, 1f);
+    Color black = new Color(0f / 255f, 0f / 255f, 0f / 255f, 1f);
+
     public gridCreate(int width, int height)
     {
         this.width = width;
@@ -83,15 +81,24 @@ public class gridCreate
                     int eheightV = 0, rr = 0, heightV = 0;
                     // Call RandomRandom to decide whether its 
                     // a tall pillar or not
+                    var cubeBottom = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    cubeBottom.name = "Building1high " + x + " " + y;
+                    cubeBottom.GetComponent<Renderer>().material.color = Color.HSVToRGB(Random.Range(0.0f, 1.0f), 1, 1);
+                    cubeBottom.transform.position = new Vector3(x, 0.5f, y);
+                    Rigidbody RigidBodycubeBottom = cubeBottom.AddComponent<Rigidbody>();
+                    RigidBodycubeBottom.useGravity = false;
+
+
                     rr = randomrandom(rr);
                     if (rr < 7)
                     {
                         heightV = HeightValue(heightV);
-                        for (int i = 0; i <= heightV; i++)
+                        for (int i = 1; i <= heightV; i++)
                         {
+                            Debug.Log(i);
                             var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
                             cube.name = "Building1high " + x + " " + y;
-                            cube.GetComponent<Renderer>().material.color = matColor2;
+                            cube.GetComponent<Renderer>().material.color = Color.HSVToRGB(Random.Range(0.0f, 1.0f), 1, 1);
                             cube.transform.position = new Vector3(x, 0.5f + i, y);
                             Rigidbody RigidBodyCube = cube.AddComponent<Rigidbody>();
                         }
@@ -99,11 +106,11 @@ public class gridCreate
                     else
                     {
                         eheightV = ExtremeHeightValue(eheightV);
-                        for (int i = 0; i <= eheightV; i++)
+                        for (int i = 1; i <= eheightV; i++)
                         {
                             var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
                             cube.name = "Building1high " + x + " " + y;
-                            cube.GetComponent<Renderer>().material.color = matColor2;
+                            cube.GetComponent<Renderer>().material.color = Color.HSVToRGB(Random.Range(0.0f, 1.0f), 1, 1);
                             cube.transform.position = new Vector3(x, 0.5f + i, y);
                             Rigidbody RigidBodyCube = cube.AddComponent<Rigidbody>();
                         }
@@ -113,10 +120,8 @@ public class gridCreate
                 {
                     var cubeN = GameObject.CreatePrimitive(PrimitiveType.Cube);
                     cubeN.name = "Path " + x + " " + y;
-                    cubeN.GetComponent<Renderer>().material.color = matColor3;
+                    cubeN.GetComponent<Renderer>().material.color = black;
                     cubeN.transform.position = new Vector3(x, 0.5f, y);
-                    // building.GetComponent<Renderer>().material.color = 
-                    // Color.HSVToRGB(Random.Range(0.0f, 1.0f), 1, 1); 
                 }
             }
 

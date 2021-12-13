@@ -15,10 +15,4 @@ public class centerPlane : MonoBehaviour
         // Set Size
         transform.localScale = new Vector3(1 * x, 1, 1 * y);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
