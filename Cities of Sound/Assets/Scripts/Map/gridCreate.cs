@@ -93,6 +93,7 @@ public class gridCreate
                             cube.name = "Building1high " + x + " " + y;
                             cube.GetComponent<Renderer>().material.color = matColor2;
                             cube.transform.position = new Vector3(x, 0.5f + i, y);
+                            Rigidbody RigidBodyCube = cube.AddComponent<Rigidbody>();
                         }
                     }
                     else
@@ -104,11 +105,9 @@ public class gridCreate
                             cube.name = "Building1high " + x + " " + y;
                             cube.GetComponent<Renderer>().material.color = matColor2;
                             cube.transform.position = new Vector3(x, 0.5f + i, y);
+                            Rigidbody RigidBodyCube = cube.AddComponent<Rigidbody>();
                         }
                     }
-
-
-
                 }
                 if (gridArray[x, y] == 2)
                 {
@@ -116,6 +115,8 @@ public class gridCreate
                     cubeN.name = "Path " + x + " " + y;
                     cubeN.GetComponent<Renderer>().material.color = matColor3;
                     cubeN.transform.position = new Vector3(x, 0.5f, y);
+                    // building.GetComponent<Renderer>().material.color = 
+                    // Color.HSVToRGB(Random.Range(0.0f, 1.0f), 1, 1); 
                 }
             }
 

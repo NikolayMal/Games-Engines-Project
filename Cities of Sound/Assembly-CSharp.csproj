@@ -44,6 +44,7 @@
      <Compile Include="Assets\Scripts\Lighting\Sun.cs" />
      <Compile Include="Assets\Scripts\Lighting\center.cs" />
      <Compile Include="Assets\Scripts\Lighting\centerPlane.cs" />
+     <Compile Include="Assets\Scripts\Player\flipped.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2021.1.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

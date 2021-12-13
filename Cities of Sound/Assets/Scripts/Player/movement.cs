@@ -50,13 +50,6 @@ public class movement : MonoBehaviour
         {
             rb.velocity = transform.forward * 0;
         }
-        // float moveForward = Input.GetAxis("Horizontal");
-
-        // transform.position = transform.position + new Vector3(moveForward * movementSpeed * Time.deltaTime, 0, 0);
-
-
-        // transform.Translate(0, 0, Input.GetAxis("Vertical") * speedForward * Time.deltaTime);
-        // transform.Rotate(0, Input.GetAxis("Horizontal") * speedTurn * Time.deltaTime, 0);
     }
 
 }
