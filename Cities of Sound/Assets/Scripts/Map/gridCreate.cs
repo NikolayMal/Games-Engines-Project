@@ -71,6 +71,7 @@ public class gridCreate
             }
         }
 
+
         // Create Objects
         for (int x = 0; x < gridArray.GetLength(0); x++)
         {
@@ -78,15 +79,41 @@ public class gridCreate
             {
                 if (gridArray[x, y] == 1)
                 {
-                    var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    cube.name = "Building1high " + x + " " + y;
-                    cube.GetComponent<Renderer>().material.color = matColor2;
-                    cube.transform.position = new Vector3(x, 0.5f, y);
+                    // Heights of Pillars
+                    int eheightV = 0, rr = 0, heightV = 0;
+                    // Call RandomRandom to decide whether its 
+                    // a tall pillar or not
+                    rr = randomrandom(rr);
+                    if (rr < 7)
+                    {
+                        heightV = HeightValue(heightV);
+                        for (int i = 0; i <= heightV; i++)
+                        {
+                            var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                            cube.name = "Building1high " + x + " " + y;
+                            cube.GetComponent<Renderer>().material.color = matColor2;
+                            cube.transform.position = new Vector3(x, 0.5f + i, y);
+                        }
+                    }
+                    else
+                    {
+                        eheightV = ExtremeHeightValue(eheightV);
+                        for (int i = 0; i <= eheightV; i++)
+                        {
+                            var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                            cube.name = "Building1high " + x + " " + y;
+                            cube.GetComponent<Renderer>().material.color = matColor2;
+                            cube.transform.position = new Vector3(x, 0.5f + i, y);
+                        }
+                    }
+
+
+
                 }
                 if (gridArray[x, y] == 2)
                 {
                     var cubeN = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                    cubeN.name = "Road " + x + " " + y;
+                    cubeN.name = "Path " + x + " " + y;
                     cubeN.GetComponent<Renderer>().material.color = matColor3;
                     cubeN.transform.position = new Vector3(x, 0.5f, y);
                 }
@@ -99,7 +126,7 @@ public class gridCreate
     private int Increment_randomH(int randomH)
     {
         int temp = 0;
-        temp += Random.Range(2, 6); // Increment temp by random number between 2 and 6
+        temp += Random.Range(1, 4); // Increment temp by random number between 2 and 6
         temp = temp + randomH;
         randomH = temp;
         return randomH;
@@ -107,9 +134,37 @@ public class gridCreate
     private int Increment_randomW(int randomW)
     {
         int temp = 0;
-        temp += Random.Range(2, 6); // Increment temp by random number between 2 and 6
+        temp += Random.Range(1, 5); // Increment temp by random number between 2 and 6
         temp = temp + randomW;
         randomW = temp;
         return randomW;
     }
+
+    private int HeightValue(int heightV)
+    {
+        int temp = 0;
+        temp += Random.Range(2, 4); // Increment temp by random number between 2 and 6
+        temp = temp + heightV;
+        heightV = temp;
+        return heightV;
+    }
+
+    private int ExtremeHeightValue(int eheightV)
+    {
+        int temp = 0;
+        temp += Random.Range(2, 9); // Increment temp by random number between 2 and 6
+        temp = temp + eheightV;
+        eheightV = temp;
+        return eheightV;
+    }
+
+    private int randomrandom(int rr)
+    {
+        int temp = 0;
+        temp += Random.Range(0, 10); // Increment temp by random number between 2 and 6
+        temp = temp + rr;
+        rr = temp;
+        return rr;
+    }
+
 }
