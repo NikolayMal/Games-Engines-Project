@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class movement : MonoBehaviour
 {
@@ -10,7 +11,9 @@ public class movement : MonoBehaviour
     public float movementSpeed;
     public float rotationSpeed;
 
-    Vector2 move;
+    public TextMeshProUGUI cubeDeathText;
+    private int deathCounterText = 0;
+    public static int cubeDeathCounter = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +53,15 @@ public class movement : MonoBehaviour
         {
             rb.velocity = transform.forward * 0;
         }
+        Debug.Log("death counter: " + deathCounterText);
+        Debug.Log(deathCounterText.GetType());
+        cubeDeathText.text = "Cubes Destroyed: " + deathCounterText.ToString();
+    }
+
+    public int dtcCounter(int dtc)
+    {
+        deathCounterText = dtc;
+        return dtc;
     }
 
 }

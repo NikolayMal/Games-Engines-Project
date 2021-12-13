@@ -115,4 +115,6 @@ MonoBehaviour:
   whatIsSolid:
     serializedVersion: 2
     m_Bits: 0
-  destroyEffect: {fileID: 0}
+  destroyEffect: {fileID: 1132333440235898782}
+  cubeDeathCounter: 43
+  cubeDeathText: {fileID: 0}

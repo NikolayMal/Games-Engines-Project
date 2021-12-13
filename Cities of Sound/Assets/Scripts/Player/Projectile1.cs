@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Projectile1 : MonoBehaviour
 {
@@ -13,11 +14,16 @@ public class Projectile1 : MonoBehaviour
     // public int damage;
     public GameObject destroyEffect;
 
+    // Get cubeDeathCounter Value
+    private static int cubeDeathCounter = movement.cubeDeathCounter;
+    public static int deathCounterVariable = cubeDeathCounter;
+
+    movement dtc;
+
     // Start is called before the first frame update
     void Start()
     {
         //ShootingEffect = GetComponent<AudioSource>();
-
         Invoke("DestroyProjectile", lifetime);
     }
 
@@ -25,25 +31,7 @@ public class Projectile1 : MonoBehaviour
     void Update()
     {
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, whatIsSolid);
-        // if (hitInfo.collider != null)
-        // {
-        //     //ShootingEffect.Play();
-        //     //if (Input.GetMouseButtonUp(0) == true)
-        //     //{
-        //     //    ShootingEffect.Stop();
-        //     //}
-        //     if (hitInfo.collider.CompareTag("Cube"))
-        //     {
-        //         Debug.Log("Block Must be Destroyed!");
-        //     }
-        //     DestroyProjectile();
-        // }
-
-
-        // transform.Translate(Vector2.up * speed * Time.deltaTime);
         transform.Translate(0, 0, speed * Time.deltaTime);
-
-        //transform.position += transform.up * speed * Time.deltaTime; Does same as line above 
     }
 
     void OnCollisionEnter(Collision collision)
@@ -55,6 +43,10 @@ public class Projectile1 : MonoBehaviour
         {
             Debug.Log("HIT CUBE");
             Destroy(collision.gameObject);
+            deathCounterVariable += 1;
+            dtc = FindObjectOfType<movement>();
+            dtc.dtcCounter(deathCounterVariable);
+            //Debug.Log(deathCounterVariable);
         }
         // Instantiate(explosionPrefab, position, rotation);
         Destroy(gameObject);
