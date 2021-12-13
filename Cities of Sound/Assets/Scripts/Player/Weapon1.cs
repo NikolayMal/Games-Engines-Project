@@ -8,13 +8,7 @@ public class Weapon1 : MonoBehaviour
     public GameObject projectile;
     private float timeBetweenShot;
     public float starttimeBetweenShot;
-
-    public Transform Weapon;
-    public float WeaponSpeed;
-    private float WeaponAngle;
     public Transform ShotPoint;
-    public float ShotPointSpeed;
-    private float ShotPointAngle;
 
     private float timeCounter;
     private float startDelay = 2;
@@ -45,21 +39,6 @@ public class Weapon1 : MonoBehaviour
         else
         {
             timeBetweenShot -= Time.deltaTime;
-
         }
-
-        /*
-            Weapon Movement was taken and adjusted from this video:
-            https://www.youtube.com/watch?v=gaDFNCRQr38&ab_channel=OnlineCodeCoaching
-        */
-        // Rotation ( to follow mouse )
-        // Rotate Weappon
-        WeaponAngle -= Input.GetAxis("Mouse X") * WeaponSpeed * -Time.deltaTime;
-        WeaponAngle = Mathf.Clamp(WeaponAngle, -90, 90);
-        Weapon.localRotation = Quaternion.AngleAxis(WeaponAngle, Vector3.up);
-        // Rotate ShotPoint
-        ShotPointAngle -= Input.GetAxis("Mouse Y") * ShotPointSpeed * -Time.deltaTime;
-        ShotPointAngle = Mathf.Clamp(ShotPointAngle, -40, 40);
-        ShotPoint.localRotation = Quaternion.AngleAxis(ShotPointAngle, Vector3.left);
     }
 }
