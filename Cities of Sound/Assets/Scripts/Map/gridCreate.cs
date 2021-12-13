@@ -96,7 +96,6 @@ public class gridCreate
                         heightV = HeightValue(heightV);
                         for (int i = 1; i <= heightV; i++)
                         {
-                            Debug.Log(i);
                             var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
                             cube.name = "Building1high " + x + " " + y;
                             cube.GetComponent<Renderer>().material.color = Color.HSVToRGB(Random.Range(0.0f, 1.0f), 1, 1);

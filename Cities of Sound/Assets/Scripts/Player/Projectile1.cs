@@ -32,11 +32,10 @@ public class Projectile1 : MonoBehaviour
             //{
             //    ShootingEffect.Stop();
             //}
-            // if (hitInfo.collider.CompareTag("Enemy"))
-            // {
-            //     Debug.Log("Enemy Must Take Damage!");
-            //     hitInfo.collider.GetComponent<BirdMovement>().TakeDamage(damage);
-            // }
+            if (hitInfo.collider.CompareTag("Cube"))
+            {
+                Debug.Log("Cube Must be Destroyed!");
+            }
             DestroyProjectile();
         }
 
