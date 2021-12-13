@@ -88,6 +88,7 @@ public class gridCreate
                     Rigidbody RigidBodycubeBottom = cubeBottom.AddComponent<Rigidbody>();
                     RigidBodycubeBottom.useGravity = false;
                     cubeBottom.tag = "Cube";
+                    cubeBottom.layer = 6;
 
 
                     rr = randomrandom(rr);
@@ -102,6 +103,7 @@ public class gridCreate
                             cube.transform.position = new Vector3(x, 0.5f + i, y);
                             Rigidbody RigidBodyCube = cube.AddComponent<Rigidbody>();
                             cube.tag = "Cube";
+                            cube.layer = 6;
                         }
                     }
                     else
@@ -115,6 +117,7 @@ public class gridCreate
                             cube.transform.position = new Vector3(x, 0.5f + i, y);
                             Rigidbody RigidBodyCube = cube.AddComponent<Rigidbody>();
                             cube.tag = "Cube";
+                            cube.layer = 6;
                         }
                     }
                 }
@@ -125,6 +128,7 @@ public class gridCreate
                     cubeN.GetComponent<Renderer>().material.color = black;
                     cubeN.transform.position = new Vector3(x, 0.5f, y);
                     cubeN.tag = "Cube";
+                    cubeN.layer = 6;
                 }
             }
 
