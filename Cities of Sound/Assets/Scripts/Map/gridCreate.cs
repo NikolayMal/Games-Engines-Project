@@ -133,6 +133,29 @@ public class gridCreate
             }
 
         }
+        // Create Object that changes the weapon of a player
+        // spawn more objects that do so depending on size of array
+        float ax = gridArray.GetLength(0);
+        float ay = gridArray.GetLength(1);
+        float sObject = (ax * ay) * 0.0125f;
+
+
+        float randomGridx = 0;
+        float randomGridy = 0;
+        for (int i = 0; i < sObject; i++)
+        {
+            randomGridx = randomGridX(randomGridx);
+            randomGridy = randomGridY(randomGridy);
+            var cubeWeapon = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            cubeWeapon.name = "cubeWeapon " + i;
+            cubeWeapon.GetComponent<Renderer>().material.color = black;
+            cubeWeapon.transform.position = new Vector3(randomGridx, 10.5f, randomGridy);
+            cubeWeapon.tag = "cubeWeapon";
+            Rigidbody RigidBodyCube = cubeWeapon.AddComponent<Rigidbody>();
+            cubeWeapon.layer = 6;
+        }
+
+
     }
 
     // Random Numbers
@@ -178,6 +201,22 @@ public class gridCreate
         temp = temp + rr;
         rr = temp;
         return rr;
+    }
+
+    private float randomGridX(float randomGridx)
+    {
+        float x = gridArray.GetLength(0);
+        float y = gridArray.GetLength(1);
+        randomGridx = Random.Range(0, x);
+        return randomGridx;
+    }
+
+    private float randomGridY(float randomGridy)
+    {
+        float x = gridArray.GetLength(0);
+        float y = gridArray.GetLength(1);
+        randomGridy = Random.Range(0, y);
+        return randomGridy;
     }
 
 }

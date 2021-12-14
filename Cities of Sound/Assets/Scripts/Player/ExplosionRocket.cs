@@ -5,28 +5,24 @@ using UnityEngine;
 public class ExplosionRocket : MonoBehaviour
 {
     public GameObject explosionEffect;
-    public float delay = 0.001f;
     public float explosionForce = 10f;
     public float radius = 5f;
+    public GameObject DestroyMe;
 
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("Explode", delay);
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
 
         foreach (Collider near in colliders)
         {
-            Rigidbody rig = near.GetComponent<Rigidbody>();
+            Rigidbody rb = near.GetComponent<Rigidbody>();
 
-            if (rig != null)
+            if (rb != null)
             {
-                rig.AddExplosionForce(explosionForce, transform.position, radius, 1f, ForceMode.Impulse);
+                rb.AddExplosionForce(explosionForce, transform.position, radius, 1f, ForceMode.Impulse);
+                Destroy(gameObject);
             }
         }
-    }
-    private void Explode()
-    {
-
     }
 }

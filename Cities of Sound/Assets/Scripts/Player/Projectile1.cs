@@ -13,6 +13,9 @@ public class Projectile1 : MonoBehaviour
 
     // public int damage;
     public GameObject destroyEffect;
+    public GameObject baseWeapon;
+    public GameObject LaserWeapon;
+    public GameObject ExplosiveWeapon;
 
     // Get cubeDeathCounter Value
     private static int cubeDeathCounter = movement.cubeDeathCounter;
@@ -41,12 +44,18 @@ public class Projectile1 : MonoBehaviour
         // Vector3 position = contact.point;
         if (collision.gameObject.tag == "Cube")
         {
-            Debug.Log("HIT CUBE");
             Destroy(collision.gameObject);
             deathCounterVariable += 1;
             dtc = FindObjectOfType<movement>();
             dtc.dtcCounter(deathCounterVariable);
-            //Debug.Log(deathCounterVariable);
+        }
+        if (collision.gameObject.tag == "cubeWeapon")
+        {
+            Destroy(collision.gameObject);
+            deathCounterVariable += 10;
+            dtc = FindObjectOfType<movement>();
+            dtc.dtcCounter(deathCounterVariable);
+            baseWeapon.SetActive(false);
         }
         // Instantiate(explosionPrefab, position, rotation);
         Destroy(gameObject);

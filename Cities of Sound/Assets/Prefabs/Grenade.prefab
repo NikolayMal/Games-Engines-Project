@@ -127,6 +127,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionEffect: {fileID: 0}
-  delay: 3
-  explosionForce: 20
-  radius: 10
+  explosionForce: 200
+  radius: 6
+  DestroyMe: {fileID: 0}

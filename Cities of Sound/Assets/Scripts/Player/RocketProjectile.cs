@@ -62,5 +62,6 @@ public class RocketProjectile : MonoBehaviour
     void ExplosionRocket()
     {
         Instantiate(explosion, transform.position, Quaternion.identity);
+        DestroyProjectile();
     }
 }

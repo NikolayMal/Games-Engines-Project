@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 108432241}
   - component: {fileID: 108432243}
   - component: {fileID: 108432242}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: cubeDeathText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,13 +525,15 @@ GameObject:
   - component: {fileID: 525216908}
   - component: {fileID: 525216907}
   - component: {fileID: 525216906}
+  - component: {fileID: 525216910}
+  - component: {fileID: 525216909}
   m_Layer: 3
   m_Name: Explosive Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &525216905
 Transform:
   m_ObjectHideFlags: 0
@@ -610,6 +612,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525216904}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &525216909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525216904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a173ac2a23bea45a84708acd093371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponSpeed: 500
+  ShotPoint: {fileID: 1829226960}
+  ShotPointSpeed: 100
+  Weapon: {fileID: 525216905}
+--- !u!114 &525216910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525216904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b931c1a6497b44d99f2414d36f3dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  projectile: {fileID: 5434493139710937500, guid: 86945df6d90a8244a8d38a6fdde2a290, type: 3}
+  starttimeBetweenShot: 2
+  ShotPoint: {fileID: 1829226960}
 --- !u!1 &541576839
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &862622043
 Transform:
   m_ObjectHideFlags: 0
@@ -777,12 +811,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 862622042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a73967b0083fb54498ca743d5014505d, type: 3}
+  m_Script: {fileID: 11500000, guid: bf307756d23f6ac41b959e62492c8c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 0
   projectile: {fileID: 2586256492878154350, guid: 53c25d85cc797a84d819b9b644d79f26, type: 3}
-  starttimeBetweenShot: 0.3
+  starttimeBetweenShot: 2
   ShotPoint: {fileID: 357697020}
 --- !u!1 &882541884
 GameObject:
@@ -1131,7 +1165,7 @@ GameObject:
   - component: {fileID: 1553598652}
   - component: {fileID: 1553598651}
   - component: {fileID: 1553598650}
-  m_Layer: 5
+  m_Layer: 31
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1581,7 +1615,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dc0c366f23a41894b8589a290267ab94, type: 2}
+  - {fileID: 2100000, guid: 6390f75e47a367b498eba81468b33c70, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
