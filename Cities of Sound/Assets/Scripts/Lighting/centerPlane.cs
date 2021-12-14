@@ -13,6 +13,6 @@ public class centerPlane : MonoBehaviour
         // Set Position
         transform.position = transform.position + new Vector3(x, -0.0009f, y);
         // Set Size
-        transform.localScale = new Vector3(1 * x, 1, 1 * y);
+        transform.localScale = new Vector3((x * 0.75f), 1, (y * 0.75f));
     }
 }

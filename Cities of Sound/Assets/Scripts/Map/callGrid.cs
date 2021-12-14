@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class callGrid : MonoBehaviour
 {
-    public static int x = 20;
-    public static int y = 20;
+    public static int x = 40;
+    public static int y = 40;
 
     private void Start()
     {
