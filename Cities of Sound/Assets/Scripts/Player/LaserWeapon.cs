@@ -16,6 +16,7 @@ public class LaserWeapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        transform.rotation = Quaternion.Euler(0f, 0f, offset);
     }
 
     // Update is called once per frame
@@ -30,7 +31,7 @@ public class LaserWeapon : MonoBehaviour
 
         if (timeBetweenShot <= 0)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKey(KeyCode.Space))
             {
                 Instantiate(projectile, ShotPoint.position, transform.rotation);
                 timeBetweenShot = starttimeBetweenShot;

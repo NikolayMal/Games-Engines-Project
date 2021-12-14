@@ -13,6 +13,7 @@ public class LaserProjectile : MonoBehaviour
 
     // public int damage;
     public GameObject destroyEffect;
+    public GameObject tank;
 
     // Get cubeDeathCounter Value
     private static int cubeDeathCounter = movement.cubeDeathCounter;
@@ -39,6 +40,7 @@ public class LaserProjectile : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        Physics2D.IgnoreLayerCollision(4, 3, true);
         if (collision.gameObject.tag == "Cube")
         {
             Debug.Log("HIT CUBE");
