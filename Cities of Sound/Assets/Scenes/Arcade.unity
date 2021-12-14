@@ -135,8 +135,6 @@ GameObject:
   - component: {fileID: 92694372}
   - component: {fileID: 92694371}
   - component: {fileID: 92694370}
-  - component: {fileID: 92694373}
-  - component: {fileID: 92694374}
   m_Layer: 3
   m_Name: Base Weapon
   m_TagString: Untagged
@@ -222,38 +220,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92694368}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &92694373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92694368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a73967b0083fb54498ca743d5014505d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: 0
-  projectile: {fileID: 1132333440235898782, guid: 6c7e5d71fc18e6e4aaba9a47f81b57f5, type: 3}
-  starttimeBetweenShot: 0.3
-  ShotPoint: {fileID: 882541885}
---- !u!114 &92694374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92694368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9a173ac2a23bea45a84708acd093371, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WeaponSpeed: 500
-  ShotPoint: {fileID: 882541885}
-  ShotPointSpeed: 200
-  Weapon: {fileID: 92694369}
 --- !u!1 &108432240
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +408,8 @@ GameObject:
   - component: {fileID: 357697020}
   - component: {fileID: 357697022}
   - component: {fileID: 357697021}
+  - component: {fileID: 357697024}
+  - component: {fileID: 357697023}
   m_Layer: 3
   m_Name: ShotPoint
   m_TagString: Untagged
@@ -513,6 +481,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357697019}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &357697023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357697019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a173ac2a23bea45a84708acd093371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponSpeed: 500
+  ShotPoint: {fileID: 357697020}
+  ShotPointSpeed: 100
+  Weapon: {fileID: 862622043}
+--- !u!114 &357697024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357697019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf307756d23f6ac41b959e62492c8c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  projectile: {fileID: 2586256492878154350, guid: 53c25d85cc797a84d819b9b644d79f26, type: 3}
+  starttimeBetweenShot: 2
+  ShotPoint: {fileID: 357697020}
 --- !u!1 &525216904
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,15 +525,13 @@ GameObject:
   - component: {fileID: 525216908}
   - component: {fileID: 525216907}
   - component: {fileID: 525216906}
-  - component: {fileID: 525216910}
-  - component: {fileID: 525216909}
   m_Layer: 3
   m_Name: Explosive Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &525216905
 Transform:
   m_ObjectHideFlags: 0
@@ -612,38 +610,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525216904}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &525216909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525216904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9a173ac2a23bea45a84708acd093371, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WeaponSpeed: 500
-  ShotPoint: {fileID: 1829226960}
-  ShotPointSpeed: 100
-  Weapon: {fileID: 525216905}
---- !u!114 &525216910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525216904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6b931c1a6497b44d99f2414d36f3dca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: 0
-  projectile: {fileID: 5434493139710937500, guid: 86945df6d90a8244a8d38a6fdde2a290, type: 3}
-  starttimeBetweenShot: 2
-  ShotPoint: {fileID: 1829226960}
 --- !u!1 &541576839
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,8 +665,6 @@ GameObject:
   - component: {fileID: 862622046}
   - component: {fileID: 862622045}
   - component: {fileID: 862622044}
-  - component: {fileID: 862622048}
-  - component: {fileID: 862622047}
   m_Layer: 3
   m_Name: Laser Weapon
   m_TagString: Untagged
@@ -786,38 +750,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 862622042}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &862622047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 862622042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9a173ac2a23bea45a84708acd093371, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WeaponSpeed: 500
-  ShotPoint: {fileID: 357697020}
-  ShotPointSpeed: 100
-  Weapon: {fileID: 862622043}
---- !u!114 &862622048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 862622042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf307756d23f6ac41b959e62492c8c18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: 0
-  projectile: {fileID: 2586256492878154350, guid: 53c25d85cc797a84d819b9b644d79f26, type: 3}
-  starttimeBetweenShot: 2
-  ShotPoint: {fileID: 357697020}
 --- !u!1 &882541884
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,6 +761,8 @@ GameObject:
   - component: {fileID: 882541885}
   - component: {fileID: 882541888}
   - component: {fileID: 882541887}
+  - component: {fileID: 882541889}
+  - component: {fileID: 882541886}
   m_Layer: 3
   m_Name: ShotPoint
   m_TagString: Untagged
@@ -850,6 +784,22 @@ Transform:
   m_Father: {fileID: 92694369}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &882541886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882541884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a173ac2a23bea45a84708acd093371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponSpeed: 500
+  ShotPoint: {fileID: 882541885}
+  ShotPointSpeed: 200
+  Weapon: {fileID: 92694369}
 --- !u!23 &882541887
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -900,6 +850,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 882541884}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &882541889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882541884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73967b0083fb54498ca743d5014505d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  projectile: {fileID: 1132333440235898782, guid: 6c7e5d71fc18e6e4aaba9a47f81b57f5, type: 3}
+  starttimeBetweenShot: 0.3
+  ShotPoint: {fileID: 882541885}
 --- !u!1 &900351337
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,6 +903,9 @@ MonoBehaviour:
   movementSpeed: 20
   rotationSpeed: 5
   cubeDeathText: {fileID: 108432242}
+  baseWeapon: {fileID: 92694368}
+  LaserWeapon: {fileID: 862622042}
+  ExplosiveWeapon: {fileID: 525216904}
 --- !u!54 &900351339
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1121,7 +1090,7 @@ Light:
       e33: 1
     m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
+  m_DrawHalo: 1
   m_Flare: {fileID: 0}
   m_RenderMode: 0
   m_CullingMask:
@@ -1364,6 +1333,8 @@ GameObject:
   - component: {fileID: 1829226960}
   - component: {fileID: 1829226962}
   - component: {fileID: 1829226961}
+  - component: {fileID: 1829226964}
+  - component: {fileID: 1829226963}
   m_Layer: 3
   m_Name: ShotPoint
   m_TagString: Untagged
@@ -1435,6 +1406,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829226959}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1829226963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829226959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a173ac2a23bea45a84708acd093371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponSpeed: 500
+  ShotPoint: {fileID: 1829226960}
+  ShotPointSpeed: 100
+  Weapon: {fileID: 525216905}
+--- !u!114 &1829226964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829226959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b931c1a6497b44d99f2414d36f3dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  projectile: {fileID: 5434493139710937500, guid: 86945df6d90a8244a8d38a6fdde2a290, type: 3}
+  starttimeBetweenShot: 2
+  ShotPoint: {fileID: 1829226960}
 --- !u!1 &1930699997
 GameObject:
   m_ObjectHideFlags: 0
