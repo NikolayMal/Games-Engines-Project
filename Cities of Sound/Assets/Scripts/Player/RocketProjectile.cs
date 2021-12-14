@@ -21,6 +21,7 @@ public class RocketProjectile : MonoBehaviour
 
     public static int weaponChooseCounter = movement.weaponChooseCounter;
     public static int waeponCounterVariable = weaponChooseCounter;
+    private GameObject InstantiatedExplosionParticle;
     movement wcc;
 
     movement dtc;
@@ -56,9 +57,6 @@ public class RocketProjectile : MonoBehaviour
         if (collision.gameObject.tag == "cubeWeapon")
         {
             Destroy(collision.gameObject);
-            deathCounterVariable += 10;
-            dtc = FindObjectOfType<movement>();
-            dtc.dtcCounter(deathCounterVariable);
             waeponCounterVariable = 1;
             wcc = FindObjectOfType<movement>();
             wcc.wcCounter(waeponCounterVariable);
@@ -69,12 +67,16 @@ public class RocketProjectile : MonoBehaviour
 
     void DestroyProjectile()
     {
-        //Instantiate(destroyEffect, transform.position, Quaternion.identity);
+
         Destroy(gameObject);
     }
 
     void ExplosionRocket()
     {
+        // Explosion Particle
+        InstantiatedExplosionParticle = (GameObject)Instantiate(destroyEffect, transform.position, Quaternion.identity);
+        Destroy(InstantiatedExplosionParticle, .4f);
+        // Create Explosion 
         Instantiate(explosion, transform.position, Quaternion.identity);
         DestroyProjectile();
     }

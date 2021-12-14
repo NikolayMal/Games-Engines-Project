@@ -52,9 +52,6 @@ public class LaserProjectile : MonoBehaviour
         if (collision.gameObject.tag == "cubeWeapon")
         {
             Destroy(collision.gameObject);
-            deathCounterVariable += 10;
-            dtc = FindObjectOfType<movement>();
-            dtc.dtcCounter(deathCounterVariable);
             waeponCounterVariable = 1;
             wcc = FindObjectOfType<movement>();
             wcc.wcCounter(waeponCounterVariable);

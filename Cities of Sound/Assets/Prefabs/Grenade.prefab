@@ -129,4 +129,4 @@ MonoBehaviour:
   explosionEffect: {fileID: 0}
   explosionForce: 30
   radius: 10
-  DestroyMe: {fileID: 0}
+  DestroyMe: {fileID: 1337198075554910, guid: 1586f80fa75a8144690f519a388032bb, type: 3}
