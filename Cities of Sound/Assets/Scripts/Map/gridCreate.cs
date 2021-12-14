@@ -12,9 +12,6 @@ public class gridCreate
     private int SizeX = callGrid.x / 2;
     private int SizeY = callGrid.y / 2;
 
-    Material Building = Resources.Load("Building", typeof(Material)) as Material;
-    Material testimg = Resources.Load("testimg", typeof(Material)) as Material;
-
     // Colors
     Color black = new Color(0f / 255f, 0f / 255f, 0f / 255f, 1f);
 
@@ -135,6 +132,7 @@ public class gridCreate
         }
         // Create Object that changes the weapon of a player
         // spawn more objects that do so depending on size of array
+        // Spawn 4 of them, even though there are only 2 upgrades
         float randomGridx = 0;
         float randomGridy = 0;
         for (int i = 0; i < 4; i++)
@@ -149,8 +147,6 @@ public class gridCreate
             Rigidbody RigidBodyCube = cubeWeapon.AddComponent<Rigidbody>();
             cubeWeapon.layer = 6;
         }
-
-
     }
 
     // Random Numbers

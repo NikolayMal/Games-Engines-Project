@@ -15,7 +15,6 @@ public class movement : MonoBehaviour
     private int deathCounterText = 0;
     public static int cubeDeathCounter = 0;
     public static int weaponChooseCounter = 0;
-    private int weaponChosen = 0;
     public GameObject baseWeapon;
     public GameObject LaserWeapon;
     public GameObject ExplosiveWeapon;
