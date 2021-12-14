@@ -19,6 +19,10 @@ public class RocketProjectile : MonoBehaviour
     private static int cubeDeathCounter = movement.cubeDeathCounter;
     public static int deathCounterVariable = cubeDeathCounter;
 
+    public static int weaponChooseCounter = movement.weaponChooseCounter;
+    public static int waeponCounterVariable = weaponChooseCounter;
+    movement wcc;
+
     movement dtc;
 
     // Start is called before the first frame update
@@ -48,6 +52,16 @@ public class RocketProjectile : MonoBehaviour
             dtc = FindObjectOfType<movement>();
             dtc.dtcCounter(deathCounterVariable);
             //Debug.Log(deathCounterVariable);
+        }
+        if (collision.gameObject.tag == "cubeWeapon")
+        {
+            Destroy(collision.gameObject);
+            deathCounterVariable += 10;
+            dtc = FindObjectOfType<movement>();
+            dtc.dtcCounter(deathCounterVariable);
+            waeponCounterVariable = 1;
+            wcc = FindObjectOfType<movement>();
+            wcc.wcCounter(waeponCounterVariable);
         }
         ExplosionRocket();
         DestroyProjectile();

@@ -135,14 +135,9 @@ public class gridCreate
         }
         // Create Object that changes the weapon of a player
         // spawn more objects that do so depending on size of array
-        float ax = gridArray.GetLength(0);
-        float ay = gridArray.GetLength(1);
-        float sObject = (ax * ay) * 0.0125f;
-
-
         float randomGridx = 0;
         float randomGridy = 0;
-        for (int i = 0; i < sObject; i++)
+        for (int i = 0; i < 4; i++)
         {
             randomGridx = randomGridX(randomGridx);
             randomGridy = randomGridY(randomGridy);

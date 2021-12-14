@@ -13,15 +13,16 @@ public class Projectile1 : MonoBehaviour
 
     // public int damage;
     public GameObject destroyEffect;
-    public GameObject baseWeapon;
-    public GameObject LaserWeapon;
-    public GameObject ExplosiveWeapon;
+
 
     // Get cubeDeathCounter Value
     private static int cubeDeathCounter = movement.cubeDeathCounter;
     public static int deathCounterVariable = cubeDeathCounter;
+    public static int weaponChooseCounter = movement.weaponChooseCounter;
+    public static int waeponCounterVariable = weaponChooseCounter;
 
     movement dtc;
+    movement wcc;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +56,9 @@ public class Projectile1 : MonoBehaviour
             deathCounterVariable += 10;
             dtc = FindObjectOfType<movement>();
             dtc.dtcCounter(deathCounterVariable);
-            baseWeapon.SetActive(false);
+            waeponCounterVariable = 1;
+            wcc = FindObjectOfType<movement>();
+            wcc.wcCounter(waeponCounterVariable);
         }
         // Instantiate(explosionPrefab, position, rotation);
         Destroy(gameObject);

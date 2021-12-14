@@ -14,11 +14,17 @@ public class movement : MonoBehaviour
     public TextMeshProUGUI cubeDeathText;
     private int deathCounterText = 0;
     public static int cubeDeathCounter = 0;
+    public static int weaponChooseCounter = 0;
+    private int weaponChosen = 0;
+    public GameObject baseWeapon;
+    public GameObject LaserWeapon;
+    public GameObject ExplosiveWeapon;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        wcCounter(0);
     }
 
     // Update is called once per frame
@@ -56,6 +62,8 @@ public class movement : MonoBehaviour
 
         // Change counter text
         cubeDeathText.text = "Cubes Destroyed: " + deathCounterText.ToString();
+
+
     }
 
 
@@ -64,6 +72,28 @@ public class movement : MonoBehaviour
     {
         deathCounterText = dtc;
         return dtc;
+    }
+
+    public int wcCounter(int wcc)
+    {
+        weaponChooseCounter += wcc;
+
+        if (weaponChooseCounter == 0)
+        {
+            baseWeapon.SetActive(true);
+        }
+        if (weaponChooseCounter == 1)
+        {
+            baseWeapon.SetActive(false);
+            LaserWeapon.SetActive(true);
+        }
+        if (weaponChooseCounter == 2)
+        {
+            LaserWeapon.SetActive(false);
+            ExplosiveWeapon.SetActive(true);
+        }
+
+        return wcc;
     }
 
 }
