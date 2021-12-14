@@ -10,6 +10,15 @@ public class Wall : MonoBehaviour
     private int SizeX = callGrid.x;
     private int SizeY = callGrid.y;
 
+    private static int cubeDeathCounter = movement.cubeDeathCounter;
+    public static int deathCounterVariable = cubeDeathCounter;
+    public static int weaponChooseCounter = movement.weaponChooseCounter;
+    public static int waeponCounterVariable = weaponChooseCounter;
+
+    movement dtc;
+    movement wcc;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,10 +59,39 @@ public class Wall : MonoBehaviour
                     wall.transform.parent = this.transform;
                     // wall.GetComponent<Rigidbody>().mass = 1000;
                     wall.layer = 1;
+                    // wall.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotationY ;
                 }
             }
         }
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        // ContactPoint contact = collision.contacts[0];
+        // Quaternion rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
+        // Vector3 position = contact.point;
+        if (collision.gameObject.tag == "Cube")
+        {
+            Destroy(collision.gameObject);
+            deathCounterVariable += 1;
+            dtc = FindObjectOfType<movement>();
+            dtc.dtcCounter(deathCounterVariable);
+        }
+        if (collision.gameObject.tag == "cubeWeapon")
+        {
+            Destroy(collision.gameObject);
+            deathCounterVariable += 10;
+            dtc = FindObjectOfType<movement>();
+            dtc.dtcCounter(deathCounterVariable);
+            waeponCounterVariable = 1;
+            wcc = FindObjectOfType<movement>();
+            wcc.wcCounter(waeponCounterVariable);
+        }
+        // Instantiate(explosionPrefab, position, rotation);
+        Destroy(gameObject);
+
+    }
+
 
     // Update is called once per frame
     void Update()

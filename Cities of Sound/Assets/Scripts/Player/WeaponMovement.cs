@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class WeaponMovement : MonoBehaviour
 {
-    public float WeaponSpeed;
-    private float WeaponAngle;
     public Transform ShotPoint;
-    public float ShotPointSpeed;
-    private float ShotPointAngle;
+    public float movementSpeed;
+    public float rotationSpeed;
 
     public Transform Weapon;
 
@@ -21,18 +19,23 @@ public class WeaponMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-            Weapon Movement was taken and adjusted from this video:
-            https://www.youtube.com/watch?v=gaDFNCRQr38&ab_channel=OnlineCodeCoaching
-        */
-        // Rotation ( to follow mouse )
-        // Rotate Weappon
-        WeaponAngle -= Input.GetAxis("Mouse X") * WeaponSpeed * -Time.deltaTime;
-        WeaponAngle = Mathf.Clamp(WeaponAngle, -90, 90);
-        Weapon.localRotation = Quaternion.AngleAxis(WeaponAngle, Vector3.up);
-        // Rotate ShotPoint
-        ShotPointAngle -= Input.GetAxis("Mouse Y") * ShotPointSpeed * -Time.deltaTime;
-        ShotPointAngle = Mathf.Clamp(ShotPointAngle, -40, 40);
-        ShotPoint.localRotation = Quaternion.AngleAxis(ShotPointAngle, Vector3.left);
+        // Rotate Weappon Using Arrow Keys
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            Weapon.Rotate(0f, movementSpeed * rotationSpeed * Time.deltaTime, 0f);
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            Weapon.Rotate(0f, -movementSpeed * rotationSpeed * Time.deltaTime, 0f);
+        }
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            ShotPoint.Rotate(-movementSpeed * rotationSpeed * Time.deltaTime, 0f, 0f);
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            ShotPoint.Rotate(movementSpeed * rotationSpeed * Time.deltaTime, 0f, 0f);
+        }
     }
 }

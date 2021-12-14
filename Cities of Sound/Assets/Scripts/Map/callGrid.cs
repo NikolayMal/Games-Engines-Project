@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class callGrid : MonoBehaviour
 {
-    public static int x = 40;
-    public static int y = 40;
+
+    
+    public static int x = 60;
+    public static int y = 60;
 
     private void Start()
     {
         // Putting the Values to determine size of grid
-        gridCreate gridCreate = new gridCreate(x, y);
+        // These Values Must be Equal!
+        if ( x == y)
+        {
+            gridCreate gridCreate = new gridCreate(x, y);
+        }
     }
 }
