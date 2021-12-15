@@ -345,6 +345,10 @@ Music from [free-stock-music](https://www.free-stock-music.com/keys-of-moon-trop
 
 This assignment has done a lot for me. It showed what I can create in unity with a bit of time put in and has made me learn a lot. One of the most useful things is that there are many solutions to one problem. If one thing breaks, there is no need to panic as all that needs to be done is - take a step back, look at it from a different angle, and try something new. Alongside that, learning how a 3d space works and how objects operate inside of it was also very useful. I am proud of the knowledge that I have gained from this, but I am also proud of what I created. I think it is a unique mix of elements that comes together to create an interesting experience that ties together quite nicely for the player.
 
+# Video
+
+[Youtube](https://youtu.be/3AkTyzUBOO8)
+
 # Proposal submitted earlier can go here:
 
 The project will create a city which is procedurally generated. The user is able to drive around the city in various vehicles. There are different types of cities that the person is able to go to. Each one with a unique theme, and a unique vehicle. To visit these different cities, the user will change the song that is playing on the radio in their vehicle. The city themes could be a WW2 setting, a city which is celebrating new years, a hot summer etc etc. There will be anywhere from 2-5 cities that the user can traverse to enjoy the music and most importantly, admire the setting.
