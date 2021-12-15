@@ -11,12 +11,15 @@ public class gridCreate
 
     private int SizeX = callGrid.x / 2;
     private int SizeY = callGrid.y / 2;
+    public Material mat;
 
     // Colors
     Color black = new Color(0f / 255f, 0f / 255f, 0f / 255f, 1f);
 
     public gridCreate(int width, int height)
     {
+
+        // Array
         this.width = width;
         this.height = height;
         gridArray = new int[width, height];
@@ -80,7 +83,7 @@ public class gridCreate
                     // a tall pillar or not
                     var cubeBottom = GameObject.CreatePrimitive(PrimitiveType.Cube);
                     cubeBottom.name = "Building1high " + x + " " + y;
-                    cubeBottom.GetComponent<Renderer>().material.color = Color.HSVToRGB(Random.Range(0.0f, 1.0f), 1, 1);
+                    cubeBottom.GetComponent<Renderer>().material = mat;
                     cubeBottom.transform.position = new Vector3(x, 0.5f, y);
                     Rigidbody RigidBodycubeBottom = cubeBottom.AddComponent<Rigidbody>();
                     RigidBodycubeBottom.useGravity = false;

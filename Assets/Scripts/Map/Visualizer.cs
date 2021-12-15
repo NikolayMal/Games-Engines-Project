@@ -19,9 +19,8 @@ public class Visualizer : MonoBehaviour
 
     //
     private Color visualizerColor = new Color(220, 0, 240);
-    private Color black = new Color(255, 255, 255);
-    private Color white = new Color(0, 0, 0);
-    private int colorBoolean = 0;
+    private Color color1 = Color.gray;
+
     VisualizerObject[] visualizerObjects;
 
 
@@ -46,16 +45,8 @@ public class Visualizer : MonoBehaviour
             Newimage.rectTransform.Translate(new Vector3(col - (gap / 2), 3f, -5));
             Newimage.name = "Visualizer Image : " + col;
             image.AddComponent<VisualizerObject>();
-            if (colorBoolean == 0)
-            {
-                image.GetComponent<Image>().color = black;
-                colorBoolean = 1;
-            }
-            else
-            {
-                image.GetComponent<Image>().color = white;
-                colorBoolean = 0;
-            }
+            image.GetComponent<Image>().color = color1;
+
         }
 
         visualizerObjects = GetComponentsInChildren<VisualizerObject>();
