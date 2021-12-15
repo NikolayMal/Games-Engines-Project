@@ -8,10 +8,7 @@ public class Projectile1 : MonoBehaviour
     public float speed;
     public float lifetime;
     public float distance;
-    // public AudioSource ShootingEffect;
     public LayerMask whatIsSolid;
-
-    // public int damage;
     public GameObject destroyEffect;
 
 
@@ -22,11 +19,11 @@ public class Projectile1 : MonoBehaviour
     public static int waeponCounterVariable = weaponChooseCounter;
 
     movement dtc;
+    movement wcc;
 
     // Start is called before the first frame update
     void Start()
     {
-        //ShootingEffect = GetComponent<AudioSource>();
         Invoke("DestroyProjectile", lifetime);
     }
 
@@ -39,9 +36,6 @@ public class Projectile1 : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        // ContactPoint contact = collision.contacts[0];
-        // Quaternion rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
-        // Vector3 position = contact.point;
         if (collision.gameObject.tag == "Cube")
         {
             Destroy(collision.gameObject);
@@ -52,15 +46,17 @@ public class Projectile1 : MonoBehaviour
         if (collision.gameObject.tag == "cubeWeapon")
         {
             Destroy(collision.gameObject);
+            waeponCounterVariable = 1;
+            deathCounterVariable += 1;
+            wcc = FindObjectOfType<movement>();
+            wcc.wcCounter(waeponCounterVariable);
         }
-        // Instantiate(explosionPrefab, position, rotation);
         Destroy(gameObject);
 
     }
 
     void DestroyProjectile()
     {
-        //Instantiate(destroyEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

@@ -12,11 +12,12 @@ public class LaserProjectile : MonoBehaviour
     public GameObject destroyEffect;
     public GameObject tank;
 
-    // Get cubeDeathCounter Value
     private static int cubeDeathCounter = movement.cubeDeathCounter;
     public static int deathCounterVariable = cubeDeathCounter;
     public static int weaponChooseCounter = movement.weaponChooseCounter;
     public static int waeponCounterVariable = weaponChooseCounter;
+    movement wcc;
+
     movement dtc;
 
     // Start is called before the first frame update
@@ -37,7 +38,6 @@ public class LaserProjectile : MonoBehaviour
         Physics2D.IgnoreLayerCollision(4, 3, true);
         if (collision.gameObject.tag == "Cube")
         {
-            Debug.Log("HIT CUBE");
             Destroy(collision.gameObject);
             deathCounterVariable += 1;
             dtc = FindObjectOfType<movement>();
@@ -46,12 +46,16 @@ public class LaserProjectile : MonoBehaviour
         if (collision.gameObject.tag == "cubeWeapon")
         {
             Destroy(collision.gameObject);
+            waeponCounterVariable = 1;
+            deathCounterVariable += 1;
+            wcc = FindObjectOfType<movement>();
+            wcc.wcCounter(waeponCounterVariable);
         }
+
     }
 
     void DestroyProjectile()
     {
-        //Instantiate(destroyEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

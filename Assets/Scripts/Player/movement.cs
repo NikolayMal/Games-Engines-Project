@@ -19,6 +19,8 @@ public class movement : MonoBehaviour
     public GameObject LaserWeapon;
     public GameObject ExplosiveWeapon;
 
+    int routineCheck = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +64,7 @@ public class movement : MonoBehaviour
 
         // Change counter text
         cubeDeathText.text = "Cubes Destroyed: " + deathCounterText.ToString();
+
     }
 
 
@@ -69,6 +72,14 @@ public class movement : MonoBehaviour
     public int dtcCounter(int dtc)
     {
         deathCounterText = dtc;
+
+        // Ensure that Routine isnt called more than once.
+        if (dtc >= 50 && routineCheck == 0)
+        {
+            CancelInvoke();
+            InvokeRepeating("CubeRainRoutine", 1f, 5f);
+            routineCheck += 1;
+        }
         return dtc;
     }
 
@@ -92,8 +103,41 @@ public class movement : MonoBehaviour
             ExplosiveWeapon.SetActive(true);
 
         }
-
         return wcc;
+    }
+
+    public void CubeRainRoutine()
+    {
+        float randomGridx = 0;
+        float randomGridy = 0;
+        for (int i = 0; i < 4; i++)
+        {
+            randomGridx = randomGridX(randomGridx);
+            randomGridy = randomGridY(randomGridy);
+            var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            cube.name = "cube " + i;
+            cube.GetComponent<Renderer>().material.color = Color.HSVToRGB(Random.Range(0.0f, 1.0f), 1, 1);
+            cube.transform.position = new Vector3(randomGridx, 10.5f, randomGridy);
+            cube.tag = "Cube";
+            Rigidbody RigidBodyCube = cube.AddComponent<Rigidbody>();
+            cube.layer = 6;
+        }
+    }
+
+    private float randomGridX(float randomGridx)
+    {
+        float x = callGrid.x;
+        float y = callGrid.y;
+        randomGridx = Random.Range(0, x);
+        return randomGridx;
+    }
+
+    private float randomGridY(float randomGridy)
+    {
+        float x = callGrid.x;
+        float y = callGrid.y;
+        randomGridy = Random.Range(0, y);
+        return randomGridy;
     }
 
 }

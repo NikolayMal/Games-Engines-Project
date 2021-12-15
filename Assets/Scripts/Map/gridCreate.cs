@@ -152,6 +152,7 @@ public class gridCreate
             Rigidbody RigidBodyCube = cubeWeapon.AddComponent<Rigidbody>();
             cubeWeapon.layer = 6;
         }
+
     }
 
     // Random Numbers
