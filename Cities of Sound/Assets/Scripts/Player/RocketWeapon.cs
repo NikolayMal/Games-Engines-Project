@@ -9,6 +9,7 @@ public class RocketWeapon : MonoBehaviour
     private float timeBetweenShot;
     public float starttimeBetweenShot;
     public Transform ShotPoint;
+    public Transform Weapon;
 
     private float timeCounter;
     private float startDelay = 2;
@@ -33,7 +34,7 @@ public class RocketWeapon : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Space))
             {
-                Instantiate(projectile, ShotPoint.position, transform.rotation);
+                Instantiate(projectile, ShotPoint.position, Weapon.rotation);
                 timeBetweenShot = starttimeBetweenShot;
             }
         }

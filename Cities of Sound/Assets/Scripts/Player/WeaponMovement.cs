@@ -29,13 +29,14 @@ public class WeaponMovement : MonoBehaviour
         {
             Weapon.Rotate(0f, -movementSpeed * rotationSpeed * Time.deltaTime, 0f);
         }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            ShotPoint.Rotate(-movementSpeed * rotationSpeed * Time.deltaTime, 0f, 0f);
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            ShotPoint.Rotate(movementSpeed * rotationSpeed * Time.deltaTime, 0f, 0f);
-        }
+        // Removed as it breaks laser and rocket weapons when switching to them.
+        // if (Input.GetKey(KeyCode.UpArrow))
+        // {
+        //     ShotPoint.Rotate(-movementSpeed * rotationSpeed * Time.deltaTime, 0f, 0f);
+        // }
+        // if (Input.GetKey(KeyCode.DownArrow))
+        // {
+        //     ShotPoint.Rotate(movementSpeed * rotationSpeed * Time.deltaTime, 0f, 0f);
+        // }
     }
 }

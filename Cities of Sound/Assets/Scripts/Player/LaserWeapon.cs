@@ -9,6 +9,8 @@ public class LaserWeapon : MonoBehaviour
     private float timeBetweenShot;
     public float starttimeBetweenShot;
     public Transform ShotPoint;
+    public Transform Weapon;
+
 
     private float timeCounter;
     private float startDelay = 2;
@@ -16,7 +18,7 @@ public class LaserWeapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //  transform.rotation = Quaternion.Euler(0f, 0f, offset);
+        transform.rotation = Quaternion.Euler(0f, 0f, offset);
     }
 
     // Update is called once per frame
@@ -33,7 +35,7 @@ public class LaserWeapon : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Space))
             {
-                Instantiate(projectile, ShotPoint.position, transform.rotation);
+                Instantiate(projectile, ShotPoint.position, Weapon.rotation);
                 timeBetweenShot = starttimeBetweenShot;
             }
         }

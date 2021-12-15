@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Wall : MonoBehaviour
 {
-    public int width = 10;
-    public int height = 10;
-
     private int SizeX = callGrid.x;
     private int SizeY = callGrid.y;
 

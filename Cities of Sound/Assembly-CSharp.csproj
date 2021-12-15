@@ -46,14 +46,16 @@
      <Compile Include="Assets\Scripts\Player\RocketProjectile.cs" />
      <Compile Include="Assets\Scripts\Map\MapTexture.cs" />
      <Compile Include="Assets\Scripts\Map\callGrid.cs" />
+     <Compile Include="Assets\Scripts\Map\Wall.cs" />
      <Compile Include="Assets\Scripts\Player\LaserWeapon.cs" />
      <Compile Include="Assets\Scripts\Lighting\center.cs" />
      <Compile Include="Assets\Scripts\Lighting\Sun.cs" />
      <Compile Include="Assets\Scripts\Player\LaserProjectile.cs" />
+     <Compile Include="Assets\Scripts\Map\Visualizer.cs" />
      <Compile Include="Assets\Scripts\Player\flipped.cs" />
      <Compile Include="Assets\Scripts\Player\WeaponMovement.cs" />
      <Compile Include="Assets\Scripts\Camera\camera.cs" />
-     <Compile Include="Assets\Scripts\Map\Wall.cs" />
+     <Compile Include="Assets\Scripts\Map\VisualizerObject.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

@@ -326,6 +326,8 @@
 "Assets/Scripts/Map/callGrid.cs"
 "Assets/Scripts/Map/gridCreate.cs"
 "Assets/Scripts/Map/MapTexture.cs"
+"Assets/Scripts/Map/Visualizer.cs"
+"Assets/Scripts/Map/VisualizerObject.cs"
 "Assets/Scripts/Map/Wall.cs"
 "Assets/Scripts/Player/ExplosionRocket.cs"
 "Assets/Scripts/Player/flipped.cs"

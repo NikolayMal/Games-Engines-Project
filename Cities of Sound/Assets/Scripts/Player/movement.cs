@@ -19,6 +19,7 @@ public class movement : MonoBehaviour
     public GameObject LaserWeapon;
     public GameObject ExplosiveWeapon;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,11 +86,13 @@ public class movement : MonoBehaviour
         {
             baseWeapon.SetActive(false);
             LaserWeapon.SetActive(true);
+
         }
         if (weaponChooseCounter == 2)
         {
             LaserWeapon.SetActive(false);
             ExplosiveWeapon.SetActive(true);
+
         }
 
         return wcc;
