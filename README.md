@@ -314,8 +314,8 @@ for (int col = 0; col < SizeX + gap; col++)
 
 ## Runninig
 
-![Before Running](https://gyazo.com/dc18531d77b256cacc731493a099783c)
-![After Running (scene view)](https://gyazo.com/0ce01955a5bee8e728467b9367795c11)
+![Before](https://gyazo.com/dc18531d77b256cacc731493a099783c)
+![After]https://gyazo.com/0ce01955a5bee8e728467b9367795c11)
 
 # List of classes/assets in the project and whether made yourself or modified or if its from a source, please give the reference
 
