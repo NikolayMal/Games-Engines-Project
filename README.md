@@ -18,7 +18,7 @@ The project contains a small realm where a user controls a toy tank which can sh
 - If you are ever stuck sideways, or upside down, press the F key.
 
 - If the skybox was not loaded in, it is because you do not have the asset downloaded. Retrieve the asset from:
-  [hyperlink](https://assetstore.unity.com/packages/3d/environments/sci-fi/real-stars-skybox-lite-11633).
+  [asset-store](https://assetstore.unity.com/packages/3d/environments/sci-fi/real-stars-skybox-lite-11633).
   - Download and Import it into the Unity folder.
   - Open the StarSkybox04 folder located in "Assets/Real Stars Skybox/StarSkybox04/" and drag "Cubemap Stars" onto an empty part of the Scene.
 
@@ -132,7 +132,7 @@ for (int i = 0; i < 4; i++)
 ## Tank ( Player Vehicle )
 
 First the tank was created by using an asset taken from the asset store:
-[hyperlink](https://assetstore.unity.com/packages/3d/vehicles/land/cartoon-tank-free-165189)
+[asset-store](https://assetstore.unity.com/packages/3d/vehicles/land/cartoon-tank-free-165189)
 Then, I worked on letting the user move in the tank.
 
 ```c#
@@ -314,32 +314,32 @@ for (int col = 0; col < SizeX + gap; col++)
 
 # List of classes/assets in the project and whether made yourself or modified or if its from a source, please give the reference
 
-| Class/asset         | Source                                                                                                 |
-| ------------------- | ------------------------------------------------------------------------------------------------------ |
-| WeaponMovement.cs   | Self written                                                                                           |
-| Weapon1.cs          | Self written                                                                                           |
-| RocketWeapon.cs     | Self written                                                                                           |
-| RocketProjectile.cs | Self written                                                                                           |
-| Projectile1.cs      | Self written                                                                                           |
-| movement.cs         | Self written                                                                                           |
-| LaserWeapon.cs      | Self written                                                                                           |
-| LaserProjectile.cs  | Self written                                                                                           |
-| flipped.cs          | Self written                                                                                           |
-| ExplosionRocket.cs  | Self written                                                                                           |
-| callGrid.cs         | Self written                                                                                           |
-| gridCreate.cs       | Self written                                                                                           |
-| center.cs           | Self written                                                                                           |
-| centerPlane.cs      | Self written                                                                                           |
-| Sun.cs              | Self written                                                                                           |
-| Visualizer.cs       | Modified from [hyperlink](https://www.youtube.com/watch?v=PgXZsoslGsg&ab_channel=MediaMax) By MediaMax |
-| VisualizerObject.cs | Modified from [hyperlink](https://www.youtube.com/watch?v=PgXZsoslGsg&ab_channel=MediaMax) By MediaMax |
+| Class/asset         | Source                                                                                               |
+| ------------------- | ---------------------------------------------------------------------------------------------------- |
+| WeaponMovement.cs   | Self written                                                                                         |
+| Weapon1.cs          | Self written                                                                                         |
+| RocketWeapon.cs     | Self written                                                                                         |
+| RocketProjectile.cs | Self written                                                                                         |
+| Projectile1.cs      | Self written                                                                                         |
+| movement.cs         | Self written                                                                                         |
+| LaserWeapon.cs      | Self written                                                                                         |
+| LaserProjectile.cs  | Self written                                                                                         |
+| flipped.cs          | Self written                                                                                         |
+| ExplosionRocket.cs  | Self written                                                                                         |
+| callGrid.cs         | Self written                                                                                         |
+| gridCreate.cs       | Self written                                                                                         |
+| center.cs           | Self written                                                                                         |
+| centerPlane.cs      | Self written                                                                                         |
+| Sun.cs              | Self written                                                                                         |
+| Visualizer.cs       | Modified from [youtube](https://www.youtube.com/watch?v=PgXZsoslGsg&ab_channel=MediaMax) By MediaMax |
+| VisualizerObject.cs | Modified from [youtube](https://www.youtube.com/watch?v=PgXZsoslGsg&ab_channel=MediaMax) By MediaMax |
 
 # References
 
-Visualizer Modified from [hyperlink](https://www.youtube.com/watch?v=PgXZsoslGsg&ab_channel=MediaMax) By MediaMax
-Skybox Asset from [hyperlink](https://assetstore.unity.com/packages/3d/environments/sci-fi/real-stars-skybox-lite-11633)]
-Tank Asset from [hyperlink](https://assetstore.unity.com/packages/3d/vehicles/land/cartoon-tank-free-165189)
-Music from [hyperlink](https://www.free-stock-music.com/keys-of-moon-tropical-aura.html)
+Visualizer Modified from [youtube](https://www.youtube.com/watch?v=PgXZsoslGsg&ab_channel=MediaMax) By MediaMax.
+Skybox Asset from [asset-store](https://assetstore.unity.com/packages/3d/environments/sci-fi/real-stars-skybox-lite-11633)
+Tank Asset from [asset-store](https://assetstore.unity.com/packages/3d/vehicles/land/cartoon-tank-free-165189)
+Music from [free-stock-music](https://www.free-stock-music.com/keys-of-moon-tropical-aura.html)
 
 # What I am most proud of in the assignment
 
