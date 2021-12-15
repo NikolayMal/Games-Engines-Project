@@ -34,26 +34,22 @@ public class movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            //Move the Rigidbody forwards constantly at speed you define (the blue arrow axis in Scene view)
             transform.Translate(0.0f, 0f, movementSpeed * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            //Move the Rigidbody backwards constantly at the speed you define (the blue arrow axis in Scene view)
             transform.Translate(0.0f, 0f, -movementSpeed * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            //Rotate the sprite about the Y axis in the positive direction
             transform.Rotate(0f, movementSpeed * rotationSpeed * Time.deltaTime, 0f);
 
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            //Rotate the sprite about the Y axis in the negative direction
             transform.Rotate(0f, -movementSpeed * rotationSpeed * Time.deltaTime, 0f);
         }
 

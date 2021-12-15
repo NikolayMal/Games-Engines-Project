@@ -20,7 +20,6 @@ public class WeaponMovement : MonoBehaviour
     void Update()
     {
         // Rotate Weappon Using Arrow Keys
-
         if (Input.GetKey(KeyCode.RightArrow))
         {
             Weapon.Rotate(0f, movementSpeed * rotationSpeed * Time.deltaTime, 0f);

@@ -22,8 +22,8 @@ public class gridCreate
         gridArray = new int[width, height];
 
         /* Array Value Meanings:
-            1 = Where blocks CANT spawn
-            2 = Where blocks CAN spawn
+            1 = Where blocks CAN spawn
+            2 = Where blocks CANT spawn
         */
 
         // Set all values in array to 1

@@ -23,7 +23,7 @@ public class Weapon1 : MonoBehaviour
     void Update()
     {
 
-        // Wait a a little until weapon starts ( so player can center mouse in time )
+        // Wait a little until weapon starts ( so player can center mouse in time )
         if (timeCounter < startDelay)
         {
             timeCounter += Time.deltaTime;

@@ -41,7 +41,6 @@ public class Visualizer : MonoBehaviour
             Newimage.name = "Visualizer Image : " + col;
             image.AddComponent<VisualizerObject>();
             image.GetComponent<Image>().color = color1;
-
         }
 
         visualizerObjects = GetComponentsInChildren<VisualizerObject>();
