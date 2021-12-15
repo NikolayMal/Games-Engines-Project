@@ -347,7 +347,7 @@ This assignment has done a lot for me. It showed what I can create in unity with
 
 # Video
 
-[Youtube](https://youtu.be/3AkTyzUBOO8)
+[![YouTube](http://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://youtu.be/3AkTyzUBOO8)
 
 # Proposal submitted earlier can go here:
 
