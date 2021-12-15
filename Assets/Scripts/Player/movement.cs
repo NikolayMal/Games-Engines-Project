@@ -62,8 +62,6 @@ public class movement : MonoBehaviour
 
         // Change counter text
         cubeDeathText.text = "Cubes Destroyed: " + deathCounterText.ToString();
-
-
     }
 
 

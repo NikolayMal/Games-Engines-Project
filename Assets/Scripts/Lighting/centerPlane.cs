@@ -10,7 +10,7 @@ public class centerPlane : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Set Position
+        // Set Position (center based on size of array)
         transform.position = transform.position + new Vector3(x, 0, y);
         // Set Size
         transform.localScale = new Vector3((x * 0.75f), 1, (y * 0.75f));

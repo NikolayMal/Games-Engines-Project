@@ -8,10 +8,7 @@ public class LaserProjectile : MonoBehaviour
     public float speed;
     public float lifetime;
     public float distance;
-    // public AudioSource ShootingEffect;
     public LayerMask whatIsSolid;
-
-    // public int damage;
     public GameObject destroyEffect;
     public GameObject tank;
 
@@ -20,14 +17,11 @@ public class LaserProjectile : MonoBehaviour
     public static int deathCounterVariable = cubeDeathCounter;
     public static int weaponChooseCounter = movement.weaponChooseCounter;
     public static int waeponCounterVariable = weaponChooseCounter;
-    movement wcc;
-
     movement dtc;
 
     // Start is called before the first frame update
     void Start()
     {
-        //ShootingEffect = GetComponent<AudioSource>();
         Invoke("DestroyProjectile", lifetime);
     }
 
@@ -52,12 +46,7 @@ public class LaserProjectile : MonoBehaviour
         if (collision.gameObject.tag == "cubeWeapon")
         {
             Destroy(collision.gameObject);
-            waeponCounterVariable = 1;
-            wcc = FindObjectOfType<movement>();
-            wcc.wcCounter(waeponCounterVariable);
         }
-        // Instantiate(explosionPrefab, position, rotation);
-        //Destroy(gameObject);
     }
 
     void DestroyProjectile()

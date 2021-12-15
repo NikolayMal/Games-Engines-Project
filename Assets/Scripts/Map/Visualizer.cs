@@ -21,6 +21,7 @@ public class Visualizer : MonoBehaviour
     private Color visualizerColor = new Color(220, 0, 240);
     private Color color1 = Color.gray;
 
+    // Stores Child Objects
     VisualizerObject[] visualizerObjects;
 
 
@@ -30,13 +31,7 @@ public class Visualizer : MonoBehaviour
         int gap = 10;
         for (int col = 0; col < SizeX + gap; col++)
         {
-            // GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            // cube.transform.position = transform.TransformPoint(new Vector3(col - (gap / 2) - 1, 4.5f, 0));
-            // cube.transform.rotation = transform.rotation;
-            // cube.GetComponent<Renderer>().material.color = Color.red;
-            // cube.transform.parent = this.transform;
-            // cube.layer = 1;
-
+            // Create Image which displays Visualizer
             GameObject image = new GameObject();
             Image Newimage = image.AddComponent<Image>();
             //Newimage.transform.parent = this.transform;
@@ -51,7 +46,7 @@ public class Visualizer : MonoBehaviour
 
         visualizerObjects = GetComponentsInChildren<VisualizerObject>();
 
-        //
+        // Music
         musicSource = new GameObject("musicSource").AddComponent<AudioSource>();
         musicSource.loop = loop;
         musicSource.clip = music;
@@ -62,12 +57,12 @@ public class Visualizer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Get Spectrum Data
         float[] spectrumData = new float[256];
         AudioListener.GetSpectrumData(spectrumData, 0, FFTWindow.Rectangular);
+
         for (int i = 0; i < visualizerObjects.Length; i++)
         {
-            // visualizerObjects[i].GetComponent<Image>().color = visualizerColor;
-
             // Set New Size
             Vector2 newImageSize = visualizerObjects[i].GetComponent<RectTransform>().rect.size;
             // Mathf.Lert smooths the size changing

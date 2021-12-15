@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RocketWeapon : MonoBehaviour
 {
-    public float offset;
     public GameObject projectile;
     private float timeBetweenShot;
     public float starttimeBetweenShot;
@@ -17,7 +16,6 @@ public class RocketWeapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // transform.rotation = Quaternion.Euler(0f, 0f, offset);
     }
 
     // Update is called once per frame

@@ -10,6 +10,7 @@ public class center : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Center Based on Grid Size
         transform.position = transform.position + new Vector3(x, 15, y);
     }
 

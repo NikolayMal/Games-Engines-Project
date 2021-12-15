@@ -22,7 +22,6 @@ public class Projectile1 : MonoBehaviour
     public static int waeponCounterVariable = weaponChooseCounter;
 
     movement dtc;
-    movement wcc;
 
     // Start is called before the first frame update
     void Start()
@@ -53,9 +52,6 @@ public class Projectile1 : MonoBehaviour
         if (collision.gameObject.tag == "cubeWeapon")
         {
             Destroy(collision.gameObject);
-            waeponCounterVariable = 1;
-            wcc = FindObjectOfType<movement>();
-            wcc.wcCounter(waeponCounterVariable);
         }
         // Instantiate(explosionPrefab, position, rotation);
         Destroy(gameObject);

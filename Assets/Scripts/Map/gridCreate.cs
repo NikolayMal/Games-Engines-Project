@@ -17,8 +17,6 @@ public class gridCreate
 
     public gridCreate(int width, int height)
     {
-
-        // Array
         this.width = width;
         this.height = height;
         gridArray = new int[width, height];
@@ -36,7 +34,6 @@ public class gridCreate
                 gridArray[x, y] = 1;
             }
         }
-
 
         int randomH = 0;
         int randomW = 0;
@@ -217,5 +214,4 @@ public class gridCreate
         randomGridy = Random.Range(0, y);
         return randomGridy;
     }
-
 }

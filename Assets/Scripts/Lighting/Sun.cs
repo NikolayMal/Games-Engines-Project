@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Sun : MonoBehaviour
 {
+
+    // Now the MOON (white light)
+
+    // Rotates around center point which is calculated in center.cs
     public GameObject target;
     private int x = callGrid.x / 2;
     private int y = callGrid.y / 2;
