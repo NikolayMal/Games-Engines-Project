@@ -7,7 +7,6 @@ public class Visualizer : MonoBehaviour
 {
     public GameObject parent;
     private int SizeX = callGrid.x;
-    private Color red = Color.red;
 
     public AudioClip music;
     public bool loop = true;
@@ -19,50 +18,64 @@ public class Visualizer : MonoBehaviour
 
 
     //
-    private Color visualizerColor = Color.red;
+    private Color visualizerColor = new Color(220, 0, 240);
+    private Color black = new Color(255, 255, 255);
+    private Color white = new Color(0, 0, 0);
+    private int colorBoolean = 0;
     VisualizerObject[] visualizerObjects;
+
 
     // Start is called before the first frame update
     void Start()
     {
         int gap = 10;
-        for (int i = 0; i < 4; i++)
+        for (int col = 0; col < SizeX + gap; col++)
         {
-            for (int col = 0; col < SizeX + gap; col++)
-            {
-                // GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                // cube.transform.position = transform.TransformPoint(new Vector3(col - (gap / 2) - 1, 4.5f, 0));
-                // cube.transform.rotation = transform.rotation;
-                // cube.GetComponent<Renderer>().material.color = Color.red;
-                // cube.transform.parent = this.transform;
-                // cube.layer = 1;
+            // GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            // cube.transform.position = transform.TransformPoint(new Vector3(col - (gap / 2) - 1, 4.5f, 0));
+            // cube.transform.rotation = transform.rotation;
+            // cube.GetComponent<Renderer>().material.color = Color.red;
+            // cube.transform.parent = this.transform;
+            // cube.layer = 1;
 
-                GameObject image = new GameObject();
-                Image Newimage = image.AddComponent<Image>();
-                //Newimage.transform.parent = this.transform;
-                Newimage.GetComponentInParent<RectTransform>().SetParent(parent.transform);
-                Newimage.rectTransform.sizeDelta = new Vector2(1, 1);
-                Newimage.rectTransform.Translate(new Vector3(col - (gap / 2) - 1, 3f, 0));
-                Newimage.name = "Visualizer Image : " + col;
-                image.AddComponent<VisualizerObject>();
+            GameObject image = new GameObject();
+            Image Newimage = image.AddComponent<Image>();
+            //Newimage.transform.parent = this.transform;
+            Newimage.GetComponentInParent<RectTransform>().SetParent(parent.transform);
+            Newimage.rectTransform.sizeDelta = new Vector2(1, 1);
+            Newimage.rectTransform.Translate(new Vector3(col - (gap / 2), 3f, -5));
+            Newimage.name = "Visualizer Image : " + col;
+            image.AddComponent<VisualizerObject>();
+            if (colorBoolean == 0)
+            {
+                image.GetComponent<Image>().color = black;
+                colorBoolean = 1;
+            }
+            else
+            {
+                image.GetComponent<Image>().color = white;
+                colorBoolean = 0;
             }
         }
+
         visualizerObjects = GetComponentsInChildren<VisualizerObject>();
 
         //
         musicSource = new GameObject("musicSource").AddComponent<AudioSource>();
         musicSource.loop = loop;
         musicSource.clip = music;
+        musicSource.volume = 0.5f;
         musicSource.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float[] spectrumData = musicSource.GetSpectrumData(visualizerSimples, 0, FFTWindow.Triangle);
+        float[] spectrumData = new float[256];
+        AudioListener.GetSpectrumData(spectrumData, 0, FFTWindow.Rectangular);
         for (int i = 0; i < visualizerObjects.Length; i++)
         {
-            visualizerObjects[i].GetComponent<Image>().color = visualizerColor;
+            // visualizerObjects[i].GetComponent<Image>().color = visualizerColor;
 
             // Set New Size
             Vector2 newImageSize = visualizerObjects[i].GetComponent<RectTransform>().rect.size;
